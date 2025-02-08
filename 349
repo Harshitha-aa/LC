@@ -1,0 +1,25 @@
+int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize) {
+    int *b=malloc(4*nums1Size);
+        int c=0; 
+   for(int i=0;i<nums1Size;i++)
+   {
+   for(int j=0;j<nums2Size;j++)
+   {
+    if(nums1[i]==nums2[j])
+    {
+        int f=0;
+        for(int k=0;k<c;k++)
+        {
+            if(b[k]==nums2[j])
+            f=1;
+        }
+        if(f==0)
+        {
+            b[c++]=nums2[j];
+        }
+    }
+   }
+   }
+   *returnSize=c;
+   return b;
+}
