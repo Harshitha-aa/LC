@@ -1,0 +1,27 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+#include <stdlib.h>
+
+int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
+    int *b = (int*)malloc(numsSize * sizeof(int));  // Proper allocation
+    int c = 0;  // Count of missing numbers
+
+    for (int i = 1; i <= numsSize; i++) {  
+        int found = 0;  // Flag to check if i exists in nums
+        
+        for (int j = 0; j < numsSize; j++) {
+            if (i == nums[j]) {
+                found = 1;
+                break;  // Stop early once found
+            }
+        }
+
+        if (!found) {
+            b[c++] = i;  // Store missing number
+        }
+    }
+
+    *returnSize = c;
+    return b;
+}
