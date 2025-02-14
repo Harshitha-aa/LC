@@ -1,0 +1,39 @@
+int firstUniqChar(char* s) {
+    if(strlen(s)<=1)
+    {
+     return 0;
+    }
+    int c=-2;
+    int f;
+    for(int i=0;i<strlen(s);i++)
+    {
+        for(int j=0;j<strlen(s);j++)
+        {
+            if(i!=j)
+            {
+            if(s[i]==s[j])
+            {
+                f=1;
+                break;
+            }
+            else
+            {
+                f=0;
+            }
+            }
+        }
+        if(f==0)
+        {
+            c=i;
+            break;
+        }
+    }
+    if(c!=-2)
+    {
+        return c;
+    }
+    else
+    {
+        return -1;
+    }
+}
