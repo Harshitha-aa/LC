@@ -1,0 +1,23 @@
+bool canAliceWin(int* nums, int numsSize) {
+    int s=0,c=0;
+    for(int i=0;i<numsSize;i++)
+    {
+        if(nums[i]<=9)
+        {
+            s=s+nums[i];
+        }
+        else
+        {
+
+            c=c+nums[i];
+        }
+    }
+    if(s==c)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
